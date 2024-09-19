@@ -14,6 +14,29 @@ let orders = []
 
 // Task 3- Create a Function to Place an Order
 
+function placeOrder (customerName, coffeeOrder) {
+for (const item of coffeeOrder) {
+    const product = Inventory.find(coffee => coffee.coffeeName === item.productName);
+}
+    if (quantity.stock < coffee.order)
+        console.log (`Error: Insufficient stock`)
+
+
+}
+
+itemsOrdered.forEach (item => {
+    const product = Inventory.find(coffee => coffee.coffeeName === item.productName);
+    quantity.stock -= coffee.order;
+})
+
+const Order = {
+    name: name,
+    item:itemsOrdered,
+    status: "pending"
+
+};
+orders.push (order)
+console.log (`Order place for ${customerName}`)
 
 
 
