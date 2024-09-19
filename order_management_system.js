@@ -47,23 +47,21 @@ placeOrder('Julia', [{order: 'Espresso', quantity: 11}]);
 
 // Task 4- Create a Function to Calculate Total for an Order
 
-function calculateOrderTotal (order) {
+function calculateOrderTotal(order) {
     let total = 0;
-    for (const item of order.items) {
-        const order = inventory.find (coffee => coffee.name === item.order);
-        if (order) {
-            total += order.price *item.quantity;
+    if (order && order.items) { // Check if order and items exist
+        for (const item of order.items) {
+            const coffee = inventory.find(coffee => coffee.name === item.order);
+            if (coffee) {
+                total += coffee.price * item.quantity;
+            }
         }
     }
-
     return total;
-
 }
 
-let customerOrder = []
-let totalAmount = calculateOrderTotal(customerOrder)
-console.log(`Total Amount: $${totalAmount}`)
-
+let totalAmount = calculateOrderTotal(customerOrder);
+console.log(`Total Amount: $${totalAmount}`);
 
 
 // Task 5- Create a Function to Mark an Order as Completed
