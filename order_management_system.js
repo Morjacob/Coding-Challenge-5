@@ -33,7 +33,7 @@ function placeOrder(customerName, coffeeOrder) {
         item: itemsOrdered,
         status: "pending"
     };
-    orders.push(Order); // Make sure to use uppercase 'Order' here
+    orders.push(order); // Make sure to use uppercase 'Order' here
     console.log(`Order placed for ${customerName}`);
 }
 
