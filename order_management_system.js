@@ -18,7 +18,7 @@ function placeOrder(customerName, coffeeOrder) {
     let itemsOrdered = []; // Initialize an empty array for items ordered
 
     for (const item of coffeeOrder) {
-        const product = Inventory.find(coffee => coffee.coffeeName === item.productName);
+        const product = Inventory.find(coffeeName => coffeeName.order === item.productName);
         if (product && product.quantity < item.order) {
             console.log(`Error: Insufficient stock for ${item.productName}`);
         } else {
