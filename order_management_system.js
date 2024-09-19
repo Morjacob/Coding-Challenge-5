@@ -19,16 +19,15 @@ function placeOrder(customerName, coffeeOrder) {
 
     for (const item of coffeeOrder) {
         const product = Inventory.find(coffee => coffee.coffeeName === item.productName);
-        if (product && product.quantity.stock < item.order) {
+        if (product && product.quantity < item.order) {
             console.log(`Error: Insufficient stock for ${item.productName}`);
         } else {
             itemsOrdered.push(item); // Add the item to the itemsOrdered array
         }
     }
 
-    // ... (rest of your placeOrder function)
 
-    const Order = {
+    const order = {
         name: customerName, // Assuming you want to use customerName here
         item: itemsOrdered,
         status: "pending"
