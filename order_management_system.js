@@ -60,6 +60,13 @@ function calculateOrderTotal(order) {
     return total;
 }
 
+let customerOrder = {
+    items: [
+        { order: "Espresso", quantity: 2 },
+        { order: "Latte", quantity: 1 }
+    ]
+};
+
 let totalAmount = calculateOrderTotal(customerOrder);
 console.log(`Total Amount: $${totalAmount}`);
 
