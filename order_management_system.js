@@ -37,7 +37,9 @@ function placeOrder(customerName, coffeeOrder) {
     console.log(`Order placed for ${customerName}`);
 }
 
-placeOrder('Julia', [ orders: 'Espresso', quantity: 11 ])
+placeOrder ('Julia', [{orders: 'Espresso', quantity: 11} ])
+
+
 
 // Task 4- Create a Function to Calculate Total for an Order
 
