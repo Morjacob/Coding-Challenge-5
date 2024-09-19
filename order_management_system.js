@@ -14,9 +14,7 @@ let orders = []
 
 // Task 3- Create a Function to Place an Order
 
-function placeOrder (customerName, order) {
-   if 
-}
+
 
 
 // Task 4- Create a Function to Calculate Total for an Order
@@ -53,6 +51,8 @@ function completeOrder (customerName) {
     }
     
     completeOrder ('Julia');
+
+
 
 
 // Task 6- Create a Function to Check Pending Orders
