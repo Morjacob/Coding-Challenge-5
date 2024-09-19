@@ -62,7 +62,7 @@ function calculateOrderTotal(order, inventory) {
     return total;
 }
 
-let customerOrder = [{name: 'Espresso', price: 5, quantity: 11}]
+let customerOrder = [{ price: 5, quantity: 11}]
 let totalAmount = calculateOrderTotal(customerOrder, inventory);
 console.log(`Total Amount: $${totalAmount}`);
 
