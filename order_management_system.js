@@ -18,7 +18,6 @@ function placeOrder(customerName, coffeeOrder) {
     let itemsOrdered = [];
 
     for (const item of coffeeOrder) {
-        // Assuming 'item.orders' should be 'item.productName'
         const product = Inventory.find(coffee => coffee.name === item.order); 
 
         if (product && product.quantity >= item.quantity) { 
@@ -31,6 +30,7 @@ function placeOrder(customerName, coffeeOrder) {
         }
     }
 
+   if (itemsOrdered.length > 0) {
     const order = {
         name: customerName,
         items: itemsOrdered, // Use 'items' instead of 'item'
@@ -38,6 +38,9 @@ function placeOrder(customerName, coffeeOrder) {
     };
     orders.push(order);
     console.log(`Order placed for ${customerName}`);
+} else {
+    console.log(`Nothing ordered for ${customerName}`);
+}
 }
 
 placeOrder('Julia', [{order: 'Espresso', quantity: 11}]);
