@@ -78,7 +78,7 @@ function completeOrder (customerName) {
 
     if (order) {
         order.status = 'Completed';
-        console.log (`Order for ${customerName} is completed:`, order);
+        console.log (`Order for ${customerName} is completed:`, order.items);
     } else { 
         console.log (`Error: Order not complete for customer ${customerName}.`);
 
