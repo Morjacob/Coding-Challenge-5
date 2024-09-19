@@ -49,8 +49,11 @@ placeOrder('Julia', [{order: 'Espresso', quantity: 11}]);
 
 function calculateOrderTotal (order) {
     let total = 0;
-    for (let i = 0; i < order.length; i++) {
-        total += order[i];
+    for (const item of order.items) {
+        const order = inventory.find (coffee => coffee.name === item.order);
+        if (order) {
+            total += order.price *item.quantity;
+        }
     }
 
     return total;
