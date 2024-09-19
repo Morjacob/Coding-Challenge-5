@@ -74,7 +74,7 @@ console.log(`Total Amount: $${totalAmount}`);
 // Task 5- Create a Function to Mark an Order as Completed
 
 function completeOrder (customerName) {
-    const order = orders.find (order => order.customerName === customerName);
+    const order = orders.find (order => order.name === customerName);
 
     if (order) {
         order.status = 'Completed';
