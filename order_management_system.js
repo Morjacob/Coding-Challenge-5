@@ -47,6 +47,13 @@ placeOrder('Julia', [{order: 'Espresso', quantity: 11}]);
 
 // Task 4- Create a Function to Calculate Total for an Order
 
+let customerOrder = {
+    items: [
+        { order: "Espresso", quantity: 2 },
+        { order: "Latte", quantity: 1 }
+    ]
+};
+
 function calculateOrderTotal(order) {
     let total = 0;
     if (order && order.items) { // Check if order and items exist
@@ -60,12 +67,6 @@ function calculateOrderTotal(order) {
     return total;
 }
 
-let customerOrder = {
-    items: [
-        { order: "Espresso", quantity: 2 },
-        { order: "Latte", quantity: 1 }
-    ]
-};
 
 let totalAmount = calculateOrderTotal(customerOrder);
 console.log(`Total Amount: $${totalAmount}`);
