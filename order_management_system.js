@@ -1,10 +1,10 @@
 // Task 1- Create an Inventory Array of Product Objects
 
 const Inventory = [
-    { name: 'Julia', order: 'Espresso', price: 5, quantity: 11 },
-    { name: 'Chris', order: 'Latte', price: 6, quantity: 8 },
-    { name: 'Keely', order: 'Cappuccino', price: 3, quantity: 8 },
-    { name: 'Jordan', order: 'Mocha', price: 4, quantity: 6 }
+    { name: 'Espresso', price: 5, quantity: 11 },
+    { name: 'Latte', price: 6, quantity: 8 },
+    { name: 'Cappuccino', price: 3, quantity: 8 },
+    { name: 'Mocha', price: 4, quantity: 6 }
 ]
 
 // Task 2- Create an Orders Array of Order 
