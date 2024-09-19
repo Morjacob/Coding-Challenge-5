@@ -22,6 +22,7 @@ function placeOrder(customerName, coffeeOrder) {
         if (product && product.quantity < item.order) {
             console.log(`Error: Insufficient stock for ${item.productName}`);
         } else {
+            product.quantity -= item.order; 
             itemsOrdered.push(item); // Add the item to the itemsOrdered array
         }
     }
