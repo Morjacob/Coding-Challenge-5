@@ -94,8 +94,10 @@ function completeOrder (customerName) {
 // Task 6- Create a Function to Check Pending Orders
 
 function checkPendingOrders (orders) {
-    orders.forEach (order => console.log (orders))
+    orders.forEach (order => {
+        if (order.status === 'pending') {
+            console.log (`order: ${order.name}:`)
+        }
+    }); }
 
-}
-
-console.log (checkPendingOrders(orders));
+ccheckPendingOrders(orders);
