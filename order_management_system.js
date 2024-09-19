@@ -15,31 +15,32 @@ let orders = []
 // Task 3- Create a Function to Place an Order
 
 function placeOrder(customerName, coffeeOrder) {
-    let itemsOrdered = []; // Initialize an empty array for items ordered
+    let itemsOrdered = [];
 
     for (const item of coffeeOrder) {
-        const product = Inventory.find(coffeeName => coffeeName.order === item.productName);
-        if (product && product.quantity < item.order) {
+        // Assuming 'item.orders' should be 'item.productName'
+        const product = Inventory.find(coffee => coffee.name === item.productName); 
+
+        if (product && product.quantity >= item.quantity) { 
+            product.quantity -= item.quantity;
+            itemsOrdered.push(item);
+        } else if (product) {
             console.log(`Error: Insufficient stock for ${item.productName}`);
         } else {
-            product.quantity -= item.order; 
-            itemsOrdered.push(item); // Add the item to the itemsOrdered array
+            console.log(`Error: Product ${item.productName} not found in inventory.`);
         }
     }
 
-
     const order = {
-        name: customerName, // Assuming you want to use customerName here
-        item: itemsOrdered,
+        name: customerName,
+        items: itemsOrdered, // Use 'items' instead of 'item'
         status: "pending"
     };
-    orders.push(order); // Make sure to use uppercase 'Order' here
+    orders.push(order);
     console.log(`Order placed for ${customerName}`);
 }
 
-placeOrder ('Julia', [{orders: 'Espresso', quantity: 11} ])
-
-
+placeOrder('Julia', [{productName: 'Espresso', quantity: 11}]);
 
 // Task 4- Create a Function to Calculate Total for an Order
 
