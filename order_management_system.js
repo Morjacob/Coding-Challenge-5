@@ -55,4 +55,11 @@ function completeOrder (customerName) {
     completeOrder ('Julia');
 
 
-//
+// Task 6- Create a Function to Check Pending Orders
+
+function checkPendingOrders (orders) {
+    orders.forEach (order => console.log (orders))
+
+}
+
+console.log (checkPendingOrders(orders));
