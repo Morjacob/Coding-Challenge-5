@@ -19,15 +19,15 @@ function placeOrder(customerName, coffeeOrder) {
 
     for (const item of coffeeOrder) {
         // Assuming 'item.orders' should be 'item.productName'
-        const product = Inventory.find(coffee => coffee.name === item.productName); 
+        const product = Inventory.find(coffee => coffee.name === item.order); 
 
         if (product && product.quantity >= item.quantity) { 
             product.quantity -= item.quantity;
             itemsOrdered.push(item);
         } else if (product) {
-            console.log(`Error: Insufficient stock for ${item.productName}`);
+            console.log(`Error: Insufficient stock for ${item.order}`);
         } else {
-            console.log(`Error: Product ${item.productName} not found in inventory.`);
+            console.log(`Error: Product ${item.order} not found in inventory.`);
         }
     }
 
@@ -40,7 +40,7 @@ function placeOrder(customerName, coffeeOrder) {
     console.log(`Order placed for ${customerName}`);
 }
 
-placeOrder('Julia', [{productName: 'Espresso', quantity: 11}]);
+placeOrder('Julia', [{order: 'Espresso', quantity: 11}]);
 
 // Task 4- Create a Function to Calculate Total for an Order
 
