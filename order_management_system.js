@@ -100,4 +100,4 @@ function checkPendingOrders (orders) {
         }
     }); }
 
-ccheckPendingOrders(orders);
+checkPendingOrders(orders);
