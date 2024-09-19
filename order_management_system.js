@@ -62,9 +62,9 @@ function calculateOrderTotal(order, inventory) {
     return total;
 }
 
-
-
-console.log(`Total Amount: $${total}`);
+let customerOrder = [{name: 'Espresso', price: 5, quantity: 11}]
+let totalAmount = calculateOrderTotal(customerOrder);
+console.log(`Total Amount: $${totalAmount}`);
 
 
 // Task 5- Create a Function to Mark an Order as Completed
