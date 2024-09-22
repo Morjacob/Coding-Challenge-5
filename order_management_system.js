@@ -51,7 +51,6 @@ placeOrder('Julia', [{order: 'Espresso', quantity: 11}]);
 // Task 4- Create a Function to Calculate Total for an Order
 
 
-
 function calculateOrderTotal(order, inventory) {
     let total = 0;
     if (order && order.items) { // Check if order and items exist
@@ -95,7 +94,7 @@ function completeOrder (customerName) {
 
 function checkPendingOrders (orders) {
     orders.forEach (order => {
-        if (order.status === 'pending') {
+        if (order.status === 'Pending') {
             console.log (`order: ${order.name}:`)
         }
     }); }
