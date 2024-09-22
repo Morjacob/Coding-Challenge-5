@@ -43,6 +43,7 @@ function placeOrder(customerName, coffeeOrder) {
 } else {
     console.log(`Nothing ordered for ${customerName}`);
 }
+}
 
 placeOrder('Julia', [{order: 'Espresso', quantity: 11}]);
 
