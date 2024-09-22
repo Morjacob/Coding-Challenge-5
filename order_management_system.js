@@ -15,12 +15,12 @@ let orders = []
 // Task 3- Create a Function to Place an Order
 
 function placeOrder(customerName, coffeeOrder) {
-    let itemsOrdered = [];
+    let itemsOrdered = []; // Initialize with empty array
 
     for (const item of coffeeOrder) {
         const order = Inventory.find(coffee => coffee.name === item.order); 
 
-        if (order && order.quantity >= item.quantity) { 
+        if (order && order.quantity >= item.quantity) { // checks item and quantity in stock and subtracts items ordered from current stock
             order.quantity -= item.quantity;
             itemsOrdered.push(item);
         } else if (order) {
@@ -30,7 +30,7 @@ function placeOrder(customerName, coffeeOrder) {
         }
     }
 
-  
+  // creates the order so it can be places for Julia
     if (itemsOrdered.length > 0) {
         const order = {
             name: customerName,
@@ -59,7 +59,7 @@ function calculateOrderTotal(order, inventory) {
         for (const item of order.items) {
             const coffee = inventory.find(coffee => coffee.name === item.order);
             if (coffee) {
-                total += coffee.price * item.quantity;
+                total += coffee.price * item.quantity; // calculates total
             }
         }
     }
@@ -79,7 +79,7 @@ function completeOrder (customerName) {
 
     if (order) {
         order.status = 'Completed';
-        console.log (`Order for ${customerName} is completed:`, order.items);
+        console.log (`Order for ${customerName} is completed:`, order.items); // will show Julia's completed order with quantity included
     } else { 
         console.log (`Error: Order not found for ${customerName}.`);
 
