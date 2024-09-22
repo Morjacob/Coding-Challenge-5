@@ -30,17 +30,18 @@ function placeOrder(customerName, coffeeOrder) {
         }
     }
 
-   if (itemsOrdered.length > 0) {
-    const order = {
-        name: customerName,
-        items: itemsOrdered, // Use 'items' instead of 'item'
-        status: "pending"
-    };
-    orders.push(order);
+  
+    if (itemsOrdered.length > 0) {
+        const order = {
+            name: customerName,
+            items: itemsOrdered, 
+            status: "pending"
+        };
+        orders.push(order);
+
     console.log(`Order placed for ${customerName}`);
 } else {
     console.log(`Nothing ordered for ${customerName}`);
-}
 }
 
 placeOrder('Julia', [{order: 'Espresso', quantity: 11}]);
@@ -53,7 +54,7 @@ placeOrder('Julia', [{order: 'Espresso', quantity: 11}]);
 
 function calculateOrderTotal(order, inventory) {
     let total = 0;
-    if (order && order.items) { // Check if order and items exist
+    if (order && order.items) { // Checks if the order and the items exist in array
         for (const item of order.items) {
             const coffee = inventory.find(coffee => coffee.name === item.order);
             if (coffee) {
@@ -65,8 +66,8 @@ function calculateOrderTotal(order, inventory) {
 }
 
 
-let juliaOrder = orders.find(order => order.name === 'Julia'); // Get Julia's order
-let totalAmount = calculateOrderTotal(juliaOrder, Inventory); // Use the correct inventory
+let juliaOrder = orders.find(order => order.name === 'Julia'); 
+let totalAmount = calculateOrderTotal(juliaOrder, Inventory); 
 console.log(`Total Amount: $${totalAmount}`);
 
 
@@ -79,7 +80,7 @@ function completeOrder (customerName) {
         order.status = 'Completed';
         console.log (`Order for ${customerName} is completed:`, order.items);
     } else { 
-        console.log (`Error: Order not complete for customer ${customerName}.`);
+        console.log (`Error: Order not found for ${customerName}.`);
 
     }
 
@@ -99,4 +100,5 @@ function checkPendingOrders (orders) {
         }
     }); }
 
+// Will only console.log pending orders
 checkPendingOrders(orders);
